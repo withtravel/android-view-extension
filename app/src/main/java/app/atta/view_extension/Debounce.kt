@@ -6,6 +6,9 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 
+/**
+ * After function call, ignore next invocations for certain amount of time.
+ */
 fun <T> debounce(
     delayMillis: Long = 300L,
     scope: CoroutineScope,
