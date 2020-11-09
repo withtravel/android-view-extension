@@ -6,6 +6,7 @@ import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import androidx.lifecycle.ViewTreeLifecycleOwner
 import androidx.lifecycle.lifecycleScope
+import java.text.DecimalFormat
 
 object BindingAdapters {
 
@@ -26,7 +27,6 @@ object BindingAdapters {
             View.VISIBLE
         }
     }
-
 
     @BindingAdapter("app:isClickable")
     @JvmStatic
@@ -51,6 +51,7 @@ object BindingAdapters {
      *      ViewTreeLifecycleOwner.set(window.decorView, this)
      * }
      */
+    @JvmStatic
     @BindingAdapter("app:onDebounceListener")
     fun onDebounceListener(view: View, onClickListener: View.OnClickListener) {
         val scope = ViewTreeLifecycleOwner.get(view)!!.lifecycleScope
