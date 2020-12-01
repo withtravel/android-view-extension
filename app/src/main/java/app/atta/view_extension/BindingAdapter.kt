@@ -28,6 +28,18 @@ object BindingAdapters {
         }
     }
 
+    @BindingAdapter("app:showTextIfNotZero")
+    @JvmStatic
+    fun showTextIfNotZero(view: TextView, num: Int?) {
+        view.visibility = if (num == null || num == 0) {
+            view.text = ""
+            View.GONE
+        } else {
+            view.text = num.toString()
+            View.VISIBLE
+        }
+    }
+
     @BindingAdapter("app:isClickable")
     @JvmStatic
     fun isClickable(view: View, isAvailable: Boolean) {
