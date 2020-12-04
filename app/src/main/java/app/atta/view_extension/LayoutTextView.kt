@@ -26,7 +26,6 @@ class LayoutTextView : TextView {
         layoutListener = listener
         this.oneShot = oneShot
         viewTreeObserver.addOnPreDrawListener {
-            Log.e("Layout", "onPreDraw")
             // super.onLayout(changed, left, top, right, bottom)
             layoutListener?.onPreDraw(this)
             if (oneShot) layoutListener = null
