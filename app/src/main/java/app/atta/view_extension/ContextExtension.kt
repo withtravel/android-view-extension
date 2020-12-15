@@ -6,7 +6,6 @@ import android.os.Build
 import android.view.View
 import android.view.WindowInsets
 import android.view.inputmethod.InputMethodManager
-import java.lang.Exception
 
 fun Context.showSoftKeyboard(view: View) {
     if (view.requestFocus()) {
@@ -26,7 +25,7 @@ fun Activity.hideSystemUI() {
     try {
         with(window) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-                setDecorFitsSystemWindows(false)
+                setDecorFitsSystemWindows(true)
                 insetsController?.hide(WindowInsets.Type.navigationBars())
             } else {
                 // systemUiVisibility was deprecated in API level 30.
